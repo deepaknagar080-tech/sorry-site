@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I’m Sorry ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 120px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 22px;
+  width: 70%;
+  margin: auto;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yes {
+  background-color: white;
+  color: #ff4f81;
+}
+
+#no {
+  background-color: #ff4f81;
+  color: white;
+  position: absolute;
+}
+
+.heart {
+  position: fixed;
+  color: pink;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1>I’m Really Sorry ❤️</h1>
+
+<p>
+Dear [rossgula], <br><br>
+I know I hurt you.  
+That was never my intention.  
+You are important to me — more than my pride, more than my anger.  
+Please forgive me. 💖
+</p>
+
+<button id="yes" onclick="forgive()">Yes, I forgive you ❤️</button>
+<button id="no" onmouseover="moveButton()">No 😤</button>
+
+</div>
+
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function forgive() {
+  alert("Thank you for giving me another chance ❤️");
+}
+
+function moveButton() {
+  var button = document.getElementById("no");
+  button.style.top = Math.random() * window.innerHeight + "px";
+  button.style.left = Math.random() * window.innerWidth + "px";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
